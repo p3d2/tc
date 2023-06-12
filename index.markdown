@@ -1,43 +1,59 @@
-``` dataviewjs
-dv.span("") /* optional  */
-const calendarData = {
-    year: 2023,  // (optional) defaults to current year
-    colors: { 
-        gray: ["#dbdbdb", "#ebedf0", "#428bff", "#1872ff", "#0058e2"],
-        blue: ["#8cb9ff", "#69a3ff", "#428bff", "#1872ff", "#0058e2"], 
-        green: ["#c6e48b", "#7bc96f", "#49af5d", "#2e8840", "#196127"],
-        red: ["#ff9e82", "#ff7b55", "#ff4d1a", "#e73400", "#bd2a00"],
-        orange: ["#ffa244", "#fd7f00", "#dd6f00", "#bf6000", "#9b4e00"],
-        pink: ["#ff96cb", "#ff70b8", "#ff3a9d", "#ee0077", "#c30062"],
-        orangeToRed: ["#ffdf04", "#ffbe04", "#ff9a03", "#ff6d02", "#ff2c01"]
-    },
-    showCurrentDayBorder: true, // (optional) defaults to true
-    defaultEntryIntensity: 1,   // (optional) defaults to 4
-    intensityScaleStart: 1,    // (optional) defaults to lowest value passed to entries.intensity
-    intensityScaleEnd: 6,     // (optional) defaults to highest value passed to entries.intensity
-    entries: [],                // (required) populated in the DataviewJS loop below
-}
+## 2024
 
-//DataviewJS loop
-for (let page of dv.pages('"Trips"').where(p => p.code)) {
-    //dv.span("<br>" + page.destination) // uncomment for troubleshooting
-    const startDate = new Date(page.startDate);
-    const endDate = new Date(page.endDate);
-    let currentDate = startDate;
-    const oneDayInMillis = 24 * 60 * 60 * 1000;
-    while (currentDate <= endDate) {
-        const day = new Date(currentDate.getTime() + oneDayInMillis);
-        calendarData.entries.push({
-            date: day.toISOString().split('T')[0], 
-            intensity: page.code, 
-            color: page.color,
-            content: page.content,
-            destination: page.destination,
-        });
-        
-        currentDate.setDate(currentDate.getDate() + 1);
-    }
-}
+| May     |                 |            |
+| ------- | --------------- | ---------- |
+| 03 - 07 | HEL - LIS - HEL | EUR 354.92 | 
 
-renderHeatmapCalendar(this.container, calendarData)
-```
+| March    |                 |            |
+| -------- | --------------- | ---------- |
+| 01 - 05  | HEL - LIS - HEL | EUR 296.92 | 
+| 30 - 08A | HEL - LIS - HEL | EUR ?      |
+
+| February |                 |            |
+| -------- | --------------- | ---------- |
+| 01 - 06  | HEL - LIS - HEL | EUR 278.92 |
+
+
+## 2023
+
+| December      |                       |           |
+| ------------- | --------------------- | --------- |
+| 15 - 24 - 03J | HEL - HAK - LIS - HEL | EUR 1500? |
+
+| November |                 |            |
+| -------- | --------------- | ---------- |
+| 17 - 21  | HEL - LIS - HEL | EUR 278.92 |
+
+| October       |                 |       |
+| ------------- | --------------- | ----- |
+| 19/20 - 23/24 | HEL - LIS - HEL | EUR ? | 
+
+| September     |                 |       |
+| ------------- | --------------- | ----- |
+| 21/22 - 25/26 | HEL - LIS - HEL | EUR ? | 
+
+| July     |                 |            |
+| -------- | --------------- | ---------- |
+| 24 - 16A | HEL - LIS - HEL | EUR 331.97 |
+
+| June    |                 |            |
+| ------- | --------------- | ---------- |
+| 25 - 19 | HEL - LIS - HEL | EUR 423.92 |
+| 23 - 25 | HEL - TRD - HEL | EUR 631.76 | 
+
+| May     |                 |            |
+| ------- | --------------- | ---------- |
+| 11 - 16 | HEL - LIS - HEL | EUR 397.97 |
+
+| March    |                 |            |
+| -------- | --------------- | ---------- |
+| 03 - 06  | HEL - LIS - HEL | EUR 313.21 |
+| 29 - 04A | HEL - LIS - HEL | EUR 313.21 |
+
+| February |                 |            |
+| -------- | --------------- | ---------- |
+| 10 - 13  | HEL - IVL - HEL | EUR 128.02 |
+
+| January |                 |            |
+| ------- | --------------- | ---------- |
+| 27 - 31 | HEL - LIS - HEL | EUR 275.21 |
