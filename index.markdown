@@ -38,7 +38,7 @@
 
 | June    |                 |
 | ------- | --------------- |
-| 25 - 19 | HEL - LIS - HEL |
+| 15 - 19 | HEL - LIS - HEL |
 | 23 - 25 | HEL - TRD - HEL |
 
 | May     |                 |
